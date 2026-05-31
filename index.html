@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revathi — Product Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #F7F4EF;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 3rem;
+      border-bottom: 0.5px solid #c8c0b4;
+    }
+
+    .nav-logo {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+
+    /* REPLACE THIS PLACEHOLDER with an <img> tag once you have your logo:
+       <img src="logo.png" alt="Revathi" class="nav-logo"> */
+    .nav-logo-placeholder {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: #1a1a1a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7a6e62;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .nav-links a:hover {
+      color: #1a1a1a;
+    }
+
+    .hero {
+      padding: 6rem 3rem 4rem;
+      border-bottom: 0.5px solid #c8c0b4;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #7a6e62;
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: #1a1a1a;
+      max-width: 700px;
+    }
+
+    .projects {
+      padding: 4rem 3rem 6rem;
+    }
+
+    .projects-label {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #7a6e62;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      align-items: center;
+      gap: 3rem;
+      padding: 2.5rem 0;
+      border-top: 0.5px solid #c8c0b4;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s ease;
+    }
+
+    .project-card:last-child {
+      border-bottom: 0.5px solid #c8c0b4;
+    }
+
+    .project-card:hover {
+      opacity: 0.6;
+    }
+
+    .project-thumb {
+      background: #0F6E56;
+      border-radius: 4px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-thumb-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-weight: 300;
+      font-style: italic;
+      color: #9FE1CB;
+      letter-spacing: 0.05em;
+    }
+
+    .project-info {}
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tag {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7a6e62;
+      border: 0.5px solid #c8c0b4;
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    .project-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: #1a1a1a;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: #7a6e62;
+      line-height: 1.6;
+      max-width: 420px;
+    }
+
+    .project-arrow {
+      font-size: 24px;
+      color: #c8c0b4;
+      text-align: right;
+      font-weight: 300;
+    }
+
+    .project-card:hover .project-arrow {
+      color: #0F6E56;
+    }
+
+    footer {
+      padding: 2rem 3rem;
+      border-top: 0.5px solid #c8c0b4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: #7a6e62;
+      font-weight: 300;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7a6e62;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <!-- REPLACE THIS with your logo image once ready:
+         <img src="logo.png" alt="Revathi" class="nav-logo"> -->
+    <span class="nav-logo-placeholder">Revathi Gopalakrishnan</span>
+    <ul class="nav-links">
+      <li><a href="#">Work</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="mailto:your@email.com">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <p class="hero-label">Engineering, design,<br>and product — together.</p>
+    <h1 class="hero-title">Product Builder</h1>
+  </div>
+
+  <div class="projects">
+    <p class="projects-label">Selected Work</p>
+
+    <a class="project-card" href="resonance-rx.html">
+      <div class="project-thumb">
+        <span class="project-thumb-label">Resonance Rx</span>
+      </div>
+      <div class="project-info">
+        <div class="project-tags">
+          <span class="project-tag">Health Tech</span>
+          <span class="project-tag">FDA Authorized</span>
+          <span class="project-tag">0 to 1</span>
+          <span class="project-tag">UX Design</span>
+        </div>
+        <h2 class="project-name">Resonance Rx</h2>
+        <p class="project-desc">AI-personalized music therapy for dementia care. FDA authorized, Medicare reimbursable, built from zero in under a year.</p>
+      </div>
+      <div class="project-arrow">→</div>
+    </a>
+
+  </div>
+
+  <footer>
+    <span class="footer-text">Revathi — Product Builder</span>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+      <a href="https://github.com/yourusername">GitHub</a>
+    </div>
+  </footer>
+
+</body>
+</html>
